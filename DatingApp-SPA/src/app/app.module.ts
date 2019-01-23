@@ -9,7 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
-import { BsDropdownModule, TabsModule} from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, PaginationModule, ButtonsModule} from 'ngx-bootstrap';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -30,6 +30,8 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap';
 import {TimeAgoPipe} from 'time-ago-pipe';
+
+
 export function tokenGetter(){
    return localStorage.getItem('token');
 }
@@ -66,7 +68,9 @@ export function tokenGetter(){
       NgxGalleryModule,
       FileUploadModule,
       ReactiveFormsModule,
-      BsDatepickerModule.forRoot()
+      BsDatepickerModule.forRoot(),
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot()
    ],
    providers: [
       ErrorInterceptorProvider,
